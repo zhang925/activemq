@@ -27,7 +27,7 @@
 	-->
 	<mvc:resources mapping="/javascript/**"  location="/resources/js/"/>
 	<mvc:resources mapping="/styles/**"   location="/resources/css/"/>
-	<mvc:resources mapping="/styles/**"   location="/plugins_sunny/"/>
+	<mvc:resources mapping="/styles/**"   location="/resources/"/>
 	<mvc:resources mapping="/images/**" location="/resources/image/"/>
 	<!-- 方法二 全局匹配 -->
 	<mvc:resources location="/" mapping="/**/*.html"/>
@@ -39,15 +39,15 @@
 	<mvc:default-servlet-handler />
         
 	<!-- 扫描器 -->
-	<!--  <context:component-scan base-package="com.zzy.controller" />   
-     当出现问题的时候可以尝试改成这样-->
-   <!-- <context:component-scan base-package="com.zzy.controller" >
+	  <context:component-scan base-package="com.zzy.controller" />
+     <!--当出现问题的时候可以尝试改成这样-->
+    <context:component-scan base-package="com.zzy.controller" >
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>   
     </context:component-scan>
 	<context:component-scan base-package="com.zzy.webservice"/>
 	<context:component-scan base-package="com.zzy.service"/>
 	<context:component-scan base-package="com.zzy.entity"/>
-	<context:component-scan base-package="com.zzy.*"/>-->
+	<context:component-scan base-package="com.zzy.*"/>
 
  	<!--  配置 HanderMapping 根据bean name 找到 对应的 Controller -->
  	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"></bean>
